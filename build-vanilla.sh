@@ -1,3 +1,3 @@
 #!/bin/bash
-source check-docker.sh
+source tools/check-docker.sh
 (cd vanilla && $DOCKER build -t minecraft:vanilla .)

@@ -1,6 +1,6 @@
 #!/bin/bash
-source check-docker.sh
-source check-nsenter.sh
+source tools/check-docker.sh
+source tools/check-nsenter.sh
 
 if [ $# -ne 1 ]; then
 	echo "Provide the name or ID of the Docker as the first argument"
