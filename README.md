@@ -37,6 +37,10 @@ To backup a Minecraft container
 * Run `docker ps` and lookup the ID or Name of the Docker instance
 * Run `./minecraft-backup.sh <id-or-name> <destination-dir>`
 
+To enter a Minecraft container
+* Run `docker ps` and lookup the ID or Name of the Docker instance
+* Run `./enter-container.sh <id-or-name> <destination-dir>`
+
 TODO
 ----
 Make a Docker image for FTB / Modded Minecraft servers.
