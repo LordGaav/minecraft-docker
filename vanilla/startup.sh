@@ -14,7 +14,7 @@ if [ ! -e .init_done ]; then
 		else
 			echo "No version specified, defaulting to $VERSION"
 		fi
-		curl -o /minecraft/minecraft_server.jar https://s3.amazonaws.com/Minecraft.Download/versions/$MINECRAFT_VERSION/minecraft_server.$MINECRAFT_VERSION.jar || exit 1
+		curl -o /minecraft/minecraft_server.jar https://s3.amazonaws.com/Minecraft.Download/versions/$VERSION/minecraft_server.$VERSION.jar || exit 1
 	fi
 
 	# Acknowledge EULA
