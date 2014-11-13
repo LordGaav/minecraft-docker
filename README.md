@@ -31,7 +31,7 @@ To stop a container
 
 To view the logs of (running) container
 * Run `docker ps` and lookup the ID or Name of the Docker instance
-* Run `docker logs -f <id-or-name>`
+* Run `./minecraft-logs.sh <id-or-name>` or `docker logs -f <id-or-name>`
 
 TODO
 ----
