@@ -33,6 +33,10 @@ To view the logs of (running) container
 * Run `docker ps` and lookup the ID or Name of the Docker instance
 * Run `./minecraft-logs.sh <id-or-name>` or `docker logs -f <id-or-name>`
 
+To backup a Minecraft container
+* Run `docker ps` and lookup the ID or Name of the Docker instance
+* Run `./minecraft-backup.sh <id-or-name> <destination-dir>`
+
 TODO
 ----
 Make a Docker image for FTB / Modded Minecraft servers.
