@@ -4,7 +4,6 @@ MAINTAINER Nick Douma <n.douma@nekoconeko.nl>
 EXPOSE 25565
 
 # make sure the package repository is up to date
-RUN echo "deb http://nl.archive.ubuntu.com/ubuntu trusty main universe multiverse" > /etc/apt/sources.list
 RUN apt-get update
 
 # install packages
