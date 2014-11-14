@@ -94,6 +94,11 @@ if [ ! -e .init_done ]; then
 		mv import/world world
 	fi
 
+	# Checking for custom ServerStart.sh
+	if [ -e "import/ServerStart.sh" -a -f "import/ServerStart.sh" ]; then
+		mv "import/ServerStart.sh" .
+		chmod +x ServerStart.sh
+	fi
 fi
 
 # We only want to do the steps above on first run, set a marker to avoid doing it in the future
