@@ -1,2 +1,9 @@
+*.sublime-*
+*.xml
+ftb/import/config/*
+ftb/import/mods/*
+ftb/import/world/*
+!ftb/import/.place_files_here
+tmp
 vanilla/import/world/*
 !vanilla/import/.place_files_here
