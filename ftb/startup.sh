@@ -80,18 +80,18 @@ if [ ! -e .init_done ]; then
 
 	# Checking for configs to import
 	if [ -e "import/config" -a -d "import/config" ]; then
-		mv -f "import/config/*" config
+		mv -f import/config/* config
 	fi
 
 	# Checking for mods to import
 	if [ -e "import/mods" -a -d "import/mods" ]; then
-		mv -f "import/mods/*" mods
+		mv -f import/mods/* mods
 	fi
 
 	# Checking for world to import
 	if [ -e "import/world" -a -d "import/world" ]; then
 		rm -vfR world/*
-		mv "import/world" world
+		mv import/world world
 	fi
 
 fi
