@@ -31,7 +31,7 @@ if [ ! -e .init_done ]; then
 			<(getxml $xml '/modpacks/modpack[@serverPack!=""]/@version') \
 			<(getxml $xml '/modpacks/modpack[@serverPack!=""]/@serverPack') \
 			<(getxml $xml '/modpacks/modpack[@serverPack!=""]/@repoVersion') \
-			| egrep --color=never "^$FTB_PACK:$FTB_VERSION" | head -n1 \
+			| egrep --color=never "^$PACK" | head -n1 \
 		)
 
 		if [ ! -z "$DATA" ]; then
@@ -46,11 +46,11 @@ if [ ! -e .init_done ]; then
 	fi
 
 	PACK=$(echo -n "$DATA" | cut -d":" -f3)
-	VERSION=$(echo -n "$DATA" | cut -d":" -f4 | sed 's/\./_/g')
+	VERSION=$(echo -n "$VERSION" | sed 's/\./_/g')
 	DIR=$(echo -n "$DATA" | cut -d":" -f1)
 	URL="http://ftb.cursecdn.com/FTB2/modpacks/$DIR/$VERSION/$PACK"
 
-	curl -o /minecraft/pack.zip "$URL" || exit 1
+	curl -o pack.zip "$URL" || exit 1
 	unzip pack.zip || exit 1
 	rm pack.zip || exit 1
 	chmod +x *.sh
