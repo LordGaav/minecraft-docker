@@ -41,6 +41,26 @@ To build an image from existing world files and properties
 To start an image as a container
 * Run any of the `./start-ftb_XXX.sh` files.
 
+Usage (custom pack / ATLauncher)
+--------------------------------
+To build a clean image
+* Checkout code
+* Run `./build-custom.sh`
+
+To build an image from existing world files and properties
+* Checkout code
+* Place the files that you want to import in `custom/import`
+ * The world files MUST be in a subfolder named *world*.
+ * Configs may be placed in a subfolder named *config*.
+ * Mods may be placed in a subfolder named *mods*.
+* Run `./build-custom.sh`
+
+To start an image as a container
+* The Docker expects the pack to be available in /minecraft, so you'll have to mount a volume containing the pack to use.
+* By default, the Docker will check for a file named `pack.zip`, which it will unzip and then start `LaunchServer.sh`.
+ * You can override this by passing a `CUSTOM_PACK` and/or `CUSTOM_STARTUP` variable to the Docker.
+* Example command line: `docker run -d -P -e "CUSTOM_PACK=pack.tar.xz" -e "CUSTOM_STARTUP=start.sh" -v "/path/on/host:/minecraft" minecraft:custom`.
+
 Usage (all)
 -----------
 To stop a container
