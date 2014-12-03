@@ -7,9 +7,13 @@ EXPOSE 25565
 RUN apt-get update
 
 # install packages
-RUN apt-get install -qq -y coreutils tmux vim dnsutils default-jre-headless curl tree psmisc libxml2-utils unzip
+RUN apt-get install -qq -y coreutils tmux vim dnsutils default-jre-headless curl tree psmisc
 
 RUN mkdir /minecraft
+
+# install extra tools
+RUN apt-get install -qq -y libxml2-utils unzip
+
 RUN curl -o /tmp/modpacks.xml http://ftb.cursecdn.com/FTB2/static/modpacks.xml
 RUN curl -o /tmp/thirdparty.xml http://ftb.cursecdn.com/FTB2/static/thirdparty.xml
 

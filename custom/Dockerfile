@@ -7,7 +7,7 @@ EXPOSE 25565
 RUN apt-get update
 
 # install packages
-RUN apt-get install -qq -y coreutils tmux vim dnsutils default-jre-headless curl tree psmisc libxml2-utils unzip
+RUN apt-get install -qq -y coreutils tmux vim dnsutils default-jre-headless curl tree psmisc
 
 RUN mkdir /minecraft
 
