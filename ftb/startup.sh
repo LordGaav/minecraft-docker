@@ -1,11 +1,16 @@
 #!/bin/bash
 set -x
 
-cd /minecraft || ( echo "No Minecraft folder?" && exit 1 )
+if [ ! -d "/minecraft" ]; then
+	echo "No Minecraft folder?"
+	exit 1
+fi
+
+cd /minecraft
 
 source /parse-xml.sh
 
-tree
+tree -L 2
 
 if [ ! -e .init_done ]; then
 	# Download the appropriate FTB pack
