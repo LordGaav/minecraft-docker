@@ -1,18 +1,15 @@
-FROM ubuntu:latest
+FROM ubuntu:16.04
 MAINTAINER Nick Douma <n.douma@nekoconeko.nl>
 
 EXPOSE 25565
 
-# make sure the package repository is up to date
-RUN apt-get update
-
-# install packages
-RUN apt-get install -qq -y coreutils tmux vim dnsutils default-jre-headless curl tree psmisc
-
 RUN mkdir /minecraft
 
-# install extra tools
-RUN apt-get install -qq -y libxml2-utils unzip
+# install packages
+RUN apt-get update && \
+    apt-get install -qq -y coreutils tmux vim-tiny dnsutils default-jre-headless curl tree psmisc libxml2-utils unzip && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN curl -o /tmp/modpacks.xml http://ftb.cursecdn.com/FTB2/static/modpacks.xml
 RUN curl -o /tmp/thirdparty.xml http://ftb.cursecdn.com/FTB2/static/thirdparty.xml
