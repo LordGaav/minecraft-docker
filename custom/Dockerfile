@@ -10,7 +10,7 @@ RUN mkdir /minecraft
 
 # install packages
 RUN apt-get update && \
-    apt-get install -qq -y coreutils tmux vim-tiny dnsutils default-jre-headless curl tree psmisc gzip unzip unrar-free xz-utils bzip2 && \
+    apt-get install -qq -y coreutils default-jre-headless tree tar gzip unzip unrar-free xz-utils bzip2 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
