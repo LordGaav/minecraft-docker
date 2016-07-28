@@ -1,3 +1,3 @@
 #!/bin/bash
 source tools/check-docker.sh
-$DOCKER run -d -P -e "MINECRAFT_VERSION=1.7" minecraft:vanilla
+$DOCKER run -dit -P -e "MINECRAFT_VERSION=1.7" minecraft:vanilla
