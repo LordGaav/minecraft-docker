@@ -88,7 +88,7 @@ if [ ! -e .init_done ]; then
 
 	# Checking for custom scripts
 	if stat -t import/*.sh >/dev/null 2>&1; then
-		mv "import/*.sh" .
+		mv import/*.sh .
 	fi
 	chmod +x *.sh
 fi
