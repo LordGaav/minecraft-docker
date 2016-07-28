@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x
+set -xe
 
 if [ ! -d "/minecraft" ]; then
 	echo "No Minecraft folder?"
@@ -36,7 +36,7 @@ if [ ! -e .init_done ]; then
 			<(getxml $xml '/modpacks/modpack[@serverPack!=""]/@version') \
 			<(getxml $xml '/modpacks/modpack[@serverPack!=""]/@serverPack') \
 			<(getxml $xml '/modpacks/modpack[@serverPack!=""]/@repoVersion') \
-			| egrep --color=never "^$PACK" | head -n1 \
+			| egrep "^$PACK" | head -n1 \
 		)
 
 		if [ ! -z "$DATA" ]; then

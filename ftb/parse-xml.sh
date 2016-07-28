@@ -10,5 +10,5 @@ fi
 getxml() { # $1 = xml file, $2 = xpath expression
 	echo "cat $2" | $XMLLINT --shell $1 | \
 	sed -n 's/[^\"]*\"\([^\"]*\)\"[^\"]*/\1/gp' | \
-	grep --color=never .
+	grep  .
 }
