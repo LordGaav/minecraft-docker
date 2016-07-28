@@ -8,7 +8,7 @@ tree
 if [ ! -e .init_done ]; then
 	# Check if we have a minecraft_server.jar, otherwise download it
 	if [ ! -e minecraft_server.jar ]; then
-		VERSION=1.8
+		VERSION=$(curl -s https://minecraft.net/en/download/server | grep -o 'minecraft_server.*.jar' | egrep -o '[0-9]+\.[0-9]+\.([0-9]+)?' | head -n1)
 		if [ ! -z "$MINECRAFT_VERSION" ]; then
 			VERSION=$MINECRAFT_VERSION
 		else
