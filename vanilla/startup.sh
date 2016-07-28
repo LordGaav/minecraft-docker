@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -x
 
 cd /minecraft || ( echo "No Minecraft folder?" && exit 1 )
