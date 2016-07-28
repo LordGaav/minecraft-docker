@@ -1,5 +1,5 @@
 #!/bin/sh
-set -x
+set -xe
 
 if [ ! -d "/minecraft" ]; then
 	echo "No Minecraft folder?"
